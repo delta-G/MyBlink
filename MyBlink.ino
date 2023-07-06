@@ -18,5 +18,6 @@ void loop() {
   if(currentTime - lastBlinkTime >= blinkInterval){
     ledState = ! ledState;
     digitalWrite(ledPin, ledState);
+    lastBlinkTime = currentTime;
   }
 }
