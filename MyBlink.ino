@@ -3,7 +3,7 @@ int ledPin = 13;
 unsigned long lastBlinkTime;
 boolean ledState = false;
 
-unsigned int blinkInterval = 1000;
+unsigned int blinkInterval = 500;
 
 void setup() {
 
