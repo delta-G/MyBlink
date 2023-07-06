@@ -1,14 +1,22 @@
+
+int ledPin = 13;
+unsigned long lastBlinkTime;
+boolean ledState = false;
+
+unsigned int blinkInterval = 1000;
+
 void setup() {
 
-  pinMode(13, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 
 }
 
 void loop() {
   
-  digitalWrite(13, HIGH);
-  delay(1000);
-  digitalWrite(13,LOW);
-  delay(1000);
+  unsigned long currentTime = millis();
 
+  if(currentTime - lastBlinkTime >= blinkInterval){
+    ledState = ! ledState;
+    digitalWrite(ledPin, ledState);
+  }
 }
